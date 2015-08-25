@@ -1,0 +1,27 @@
+- include: check_vars.yml tags=laclasse,laclasse:publipostage,check_vars
+
+- name: Send notification message via Slack
+  local_action:
+    module: slack
+    domain: "{{ laclasse_slack.host }}"
+    token: "{{ laclasse_slack.token }}"
+    msg: "3...2...1... publipostage version {{ laclasse_publipostage_version }} @ {{ inventory_hostname }} :rocket: "
+    channel: "{{ laclasse_slack.channel }}"
+  ignore_errors: true
+  tags:
+    - laclasse
+    - laclasse:publipostage
+
+- include: publipostage.yml tags=laclasse:publipostage,laclasse
+
+- name: Send notification message via Slack
+  local_action:
+    module: slack
+    domain: "{{ laclasse_slack.host }}"
+    token: "{{ laclasse_slack.token }}"
+    msg: "publipostage (version {{ git_tag.stdout }}) successfully deployed on {{ inventory_hostname }} :thumbsup:"
+    channel: "{{ laclasse_slack.channel }}"
+  ignore_errors: true
+  tags:
+    - laclasse
+    - laclasse:publipostage

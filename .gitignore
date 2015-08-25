@@ -1,0 +1,6 @@
+Dockerfile
+docker/
+.tags
+.vagrant
+tests/ansible-laclasse-suiviperso/playbooks/
+tests/ansible-laclasse-suiviperso/requirements.yml

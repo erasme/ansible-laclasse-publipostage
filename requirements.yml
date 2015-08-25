@@ -1,0 +1,4 @@
+- src: https://github.com/erasme/ansible-rbenv.git
+  name: ansible-rbenv
+- src: https://github.com/erasme/ansible-ruby-compiled.git
+  name: ansible-ruby-compiled

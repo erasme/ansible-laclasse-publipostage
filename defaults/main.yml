@@ -1,0 +1,83 @@
+# Generic parameters
+laclasse_environment: 'development'
+laclasse_log_parent_dir: /var/log
+laclasse_main_url: 'http://example.org'
+laclasse_main_domain: 'www.example.org'
+laclasse_pid_dir: /var/run/
+laclasse_puma_auth_token: somerandomtoken
+
+## Annuaire
+laclasse_annuaire_main_path: 'api'
+laclasse_annuaire_app_component: 'app'
+laclasse_annuaire_aaf_url: https://www.dev.example.org/annuaire
+
+laclasse_annuaire_endpoint_diffusion_info: 'diffusionInfo'
+laclasse_annuaire_endpoint_personnel: 'etablissements'
+laclasse_annuaire_endpoint_profils: 'profils'
+laclasse_annuaire_endpoint_publipostage: 'publipostages'
+laclasse_annuaire_endpoint_regroupements: 'regroupements'
+laclasse_annuaire_endpoint_user: 'users/'
+
+## Logstash server parameters
+logstash_server: localhost
+logstash_udp_json_port: 1234
+
+# No defaults for this one, you need to define it
+laclasse_redis_server: false
+laclasse_redis_port: 6379
+# No defaults for this one, you need to define it
+laclasse_redis_root: false
+
+## Slack server
+laclasse_slack:
+  host: localhost
+  channel: none
+  token: none
+
+## SSO
+laclasse_sso_disable_ssl_verification: 'false'
+laclasse_sso_login_url: '/login'
+laclasse_sso_logout_url: '/logout'
+laclasse_sso_logout_saml: '/saml/logout'
+laclasse_sso_port: 443
+laclasse_sso_restmod_url: '/restmod'
+laclasse_sso_server: cas.example.org
+laclasse_sso_service_validate_url: '/service_validate'
+laclasse_sso_ssl: 'true'
+
+laclasse_services:
+  annuaire:
+    api_key: ''
+    api_mode: ''
+    app_id: 'ANNUAIRE'
+    title: 'Annuaire'
+    description: 'Annuaire'
+    path: '/annuaire'
+  docs:
+    api_key: 'someapikey'
+    api_mode: 'v3'
+    app_id: 'DOC'
+    description: "Espace personnel de stockage, et espaces partagés."
+    path: '/docs'
+    title: 'Documents'
+  publipostage:
+    api_key: 'someapikey'
+    description: 'Application de publipostage'
+    title: 'Publipostage'
+    app_id: 'PUBLI'
+    path: '/publi'
+    api_mode: v3
+
+laclasse_suivi_perso_nginx_location_specific:
+  client_max_body_size: 20000000
+
+laclasse_services_client_max_body_size: 40000000
+
+laclasse_publipostage_deploy_user: 'publi'
+laclasse_publipostage_port: 42640
+laclasse_publipostage_packages:
+  - libmysqlclient-dev
+laclasse_publipostage_rack_sessionkey: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
+laclasse_publipostage_repos: 'https://github.com/laclasse-com/publipostage.git'
+laclasse_publipostage_ruby_version: 2.2.2
+laclasse_publipostage_version: 'master'

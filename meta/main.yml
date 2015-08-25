@@ -1,0 +1,7 @@
+dependencies:
+  - role: ansible-ruby-compiled
+    src: https://github.com/erasme/ansible-ruby-compiled.git
+    ruby_version: "{{ laclasse_publipostage_ruby_version }}"
+    ruby_default: "{{ laclasse_publipostage_ruby_version }}"
+    ruby_deploy_user: "{{ laclasse_publipostage_deploy_user }}"
+    when: '"{{ laclasse_publipostage_ruby_version }}" != "system"'

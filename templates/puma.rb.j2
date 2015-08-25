@@ -1,0 +1,11 @@
+threads 1,8
+workers 3
+daemonize
+bind 'tcp://0.0.0.0:{{ laclasse_publipostage_port }}'
+environment '{{ laclasse_environment }}'
+directory '/home/{{ laclasse_publipostage_deploy_user }}/laclasse-publipostage/'
+pidfile '{{ laclasse_pid_dir }}/laclasse-publipostage/puma.pid'
+state_path '{{ laclasse_pid_dir }}/laclasse-publipostage/puma.state'
+activate_control_app 'tcp://0.0.0.0:{{ laclasse_publipostage_port + 1 }}', { auth_token: '{{ laclasse_puma_auth_token }}' }
+stdout_redirect '{{ laclasse_log_parent_dir }}/laclasse-publipostage/puma.log', '{{ laclasse_log_parent_dir }}/laclasse-publipostage/puma_error.log', true
+tag 'puma-laclasse-publipostage'
