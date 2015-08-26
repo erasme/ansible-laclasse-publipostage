@@ -65,7 +65,6 @@
     dest: "~{{ laclasse_publipostage_deploy_user }}/laclasse-publipostage/config/{{ item }}"
   with_items:
     - options.rb
-    - common.rb
     - puma.rb
   tags: laclasse:publipostage:config
   notify: Restart laclasse-publipostage
