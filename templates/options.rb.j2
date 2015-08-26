@@ -68,7 +68,7 @@ end
 ANNUAIRE = {
   url:                            '{{ url.trim_trailing_slashes(url.dedup_slashes(laclasse_main_url, "/", laclasse_annuaire_main_path)) }}' ,
   api_key:                        "{{ laclasse_services.publipostage.api_key }}",
-  app_id:                         'PORTAIL',
+  app_id:                         '{{ laclasse_services.publipostage.app_id }}',
   api_mode:                       '{{ laclasse_services.publipostage.api_mode }}',
   service_annuaire_user:          '{{ url.dedup_slashes(laclasse_annuaire_app_component, "/", laclasse_annuaire_endpoint_user, "/") }}',
   service_annuaire_regroupements: '{{ url.dedup_slashes(laclasse_annuaire_app_component, "/", laclasse_annuaire_endpoint_regroupements, "/") }}',
