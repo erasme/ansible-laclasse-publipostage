@@ -78,6 +78,6 @@ laclasse_publipostage_port: 42640
 laclasse_publipostage_packages:
   - libmysqlclient-dev
 laclasse_publipostage_rack_sessionkey: 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb'
-laclasse_publipostage_repos: 'https://github.com/laclasse-com/publipostage.git'
+laclasse_publipostage_repos: 'https://github.com/laclasse-com/service-publipostage.git'
 laclasse_publipostage_ruby_version: "{{ laclasse_ruby_version | default('2.2.2')  }}"
 laclasse_publipostage_version: 'master'
