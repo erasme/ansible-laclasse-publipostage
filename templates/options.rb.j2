@@ -38,6 +38,8 @@ URL_ENT = '{{ laclasse_main_url }}'
 SERVICE_ANNUAIRE_ENT = '{{ laclasse_annuaire_aaf_url }}'
 
 module Configuration
+  APP_PREFIX = '{{ laclasse_services.publipostage.path }}'
+
   GIT_COMMIT = '{{ git_tag.stdout }}'
   ENVIRONMENT = '{{ laclasse_environment }}'
   LOGSTASH_SERVER="{{ logstash_server }}"
@@ -68,7 +70,7 @@ end
 ANNUAIRE = {
   url:                            '{{ url.trim_trailing_slashes(url.dedup_slashes(laclasse_main_url, "/", laclasse_annuaire_main_path)) }}' ,
   api_key:                        "{{ laclasse_services.publipostage.api_key }}",
-  app_id:                         '{{ laclasse_services.publipostage.app_id }}',
+  app_id:                         'PUBLI',
   api_mode:                       '{{ laclasse_services.publipostage.api_mode }}',
   service_annuaire_user:          '{{ url.dedup_slashes(laclasse_annuaire_app_component, "/", laclasse_annuaire_endpoint_user, "/") }}',
   service_annuaire_regroupements: '{{ url.dedup_slashes(laclasse_annuaire_app_component, "/", laclasse_annuaire_endpoint_regroupements, "/") }}',

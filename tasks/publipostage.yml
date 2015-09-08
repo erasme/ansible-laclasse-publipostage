@@ -26,6 +26,7 @@
 - name: Gets current tag
   shell: cd ~{{ laclasse_publipostage_deploy_user }}/laclasse-publipostage/ && git describe --always --tag
   changed_when: false
+  always_run: yes
   register: git_tag
   tags: laclasse:publipostage:config
 
